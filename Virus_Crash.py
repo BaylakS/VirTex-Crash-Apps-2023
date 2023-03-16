@@ -62,7 +62,7 @@ logo = f"{r}****     **** *******     **     **\n/**/**   **/**/**////**   //** 
 
 try:
 
-  os.mkdir('virtex')
+  os.mkdir('Virus_Crash')
 except FileExistsError:
   pass
 
