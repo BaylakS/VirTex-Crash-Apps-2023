@@ -37,26 +37,31 @@ if 'linux' in sys.platform:
   w = "\033[97m" # White
   a = "\033[0m"  # Reset
 else:
+
   # Convert String To Variabel Name
+
   for i in ['r','g','y','p','P','c','w','a']:
+
     globals()[i] = ""
 
 try:
+
   print (f"{p}[{y}!{p}] {r}Menghubungkan Ke Server")
+
   data = requests.get("https://www.mediafire.com/api/1.4/folder/get_content.php?content_type=files&filter=all&order_by=name&order_direction=asc&chunk=1&version=1.5&folder_key=ueti9cij4zf3i&response_format=json").json()
+
   files = data['response']['folder_content']['files']
+
 except requests.exceptions.RequestException:
+
   exit(f"{p}[{y}!{p}] {r}Tidak Ada Koneksi!{a}")
 
 colors = lambda : random.choice([r,g,y,p,P,c,w])
 
- \ \   / (_)_ __ _   _ ___    
-  \ \ / /| | '__| | | / __|     
-   \ V / | | |  | |_| \__ \      
-    \_/  |_|_|   \__,_|___/      (By BayLak - Egypt)
-╔═════════════════════════════════════╗\n║[{y}•{p}] {c}Author : {g}MR-X JUNIOR             {p}║\n║[{y}•{p}] {c}GitHub : {w}github.com/MR-X-Junior  {p}║\n║[{y}•{p}] {c}WA.    : {y}+62 85754629509        {p} ║\n║[{y}•{p}] {c}UPDATE : {UPDATE}      {p}  ║\n║[{y}•{p}] {c}Python : {colors()}{sys.version[0:6]}                {p}  ║\n║[{y}•{p}] {c}OS     : {colors()}{sys.platform}{' '*(23 - len(sys.platform))}{p} ║\n║[{y}•{p}] {c}Host   : {colors()}{socket.gethostname()}{' '*(24 - len(socket.gethostname()))}{p}║\n║[{y}•{p}] {c}Team.  : {colors()}TNT {colors()}ANONYMOUS {r}INDO{w}NESIA{p} ║\n╚═════════════════════════════════════╝{a}"
+logo = f"{r}****     **** *******     **     **\n/**/**   **/**/**////**   //**   ** \n/**//** ** /**/**   /**    //** **  \n/** //***  /**/*******      //***   \n/**  //*   /**/**///**       **/**  \n/**   /    /**/**  //**     ** //** \n/**        /**/**   //**   **   //**\n//         // //     //   //     //\n{p}╔═════════════════════════════════════╗\n║[{y}•{p}] {c}Author : {g}MR-X JUNIOR             {p}║\n║[{y}•{p}] {c}GitHub : {w}github.com/MR-X-Junior  {p}║\n║[{y}•{p}] {c}WA.    : {y}+62 85754629509        {p} ║\n║[{y}•{p}] {c}UPDATE : {UPDATE}      {p}  ║\n║[{y}•{p}] {c}Python : {colors()}{sys.version[0:6]}                {p}  ║\n║[{y}•{p}] {c}OS     : {colors()}{sys.platform}{' '*(23 - len(sys.platform))}{p} ║\n║[{y}•{p}] {c}Host   : {colors()}{socket.gethostname()}{' '*(24 - len(socket.gethostname()))}{p}║\n║[{y}•{p}] {c}Team.  : {colors()}TNT {colors()}ANONYMOUS {r}INDO{w}NESIA{p} ║\n╚═════════════════════════════════════╝{a}"
 
 try:
+
   os.mkdir('virtex')
 except FileExistsError:
   pass
